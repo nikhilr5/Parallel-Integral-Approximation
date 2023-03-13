@@ -17,6 +17,7 @@ Due to the parallelism of the using monte-carlo methods this program has two ver
 ### Installing
 
 * Clone program from github
+* Might have to update permission of shell script
 
 ### Executing program
 
