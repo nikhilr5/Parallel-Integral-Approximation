@@ -87,13 +87,7 @@ func (e ExecutorService1) Submit(task interface{}) Future {
 func (e ExecutorService1) Shutdown() {
 	e.wg.Wait()
 }
-// NewWorkStealingExecutor returns an ExecutorService that is implemented using the work-stealing algorithm.
-// @param capacity - The number of goroutines in the pool
-// @param threshold - The number of items that a goroutine in the pool can
-// grab from the executor in one time period. For example, if threshold = 10
-// this means that a goroutine can grab 10 items from the executor all at
-// once to place into their local queue before grabbing more items. It's
-// not required that you use this parameter in your implementation.
+
 func NewWorkBalancingExecutor(capacity, threshold int, wg *sync.WaitGroup) ExecutorService {
 	var arr [] *DEQueueObj
 	for i := 0; i < capacity; i++{
